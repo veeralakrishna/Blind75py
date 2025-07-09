@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>Kth Smallest Element in a BST - Blind75py</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        <link rel="canonical" href="https://veeralakrishna.github.io/Blind75py/kth_smallest_element_in_a_bst/">
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../assets/css/mkdocs.min.css">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../assets/favicon.svg">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+            <img class="logo" src="../assets/logo.svg" height="150px">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">Blind75py</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#arrays-&-hashing-collapse" aria-expanded="false">
+                    Arrays & Hashing
+                </a>
+                <div class="collapse" id="arrays-&-hashing-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../arrays_hashing/two_sum/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Two Sum
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../arrays_hashing/best_time_to_buy_and_sell_stock/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Best Time to Buy and Sell Stock
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../contains_duplicate/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Contains Duplicate
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../product_of_array_except_self/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Product of Array Except Self
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../valid_anagram/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Valid Anagram
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../group_anagrams/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Group Anagrams
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../longest_palindrome/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Longest Palindrome
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#two-pointers-collapse" aria-expanded="false">
+                    Two Pointers
+                </a>
+                <div class="collapse" id="two-pointers-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../3sum/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            3Sum
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../container_with_most_water/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Container With Most Water
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../valid_palindrome/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Valid Palindrome
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../valid_palindrome_ii/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Valid Palindrome II
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../linked_list_cycle/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Linked List Cycle
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../linked_list_cycle_ii/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Linked List Cycle II
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../find_the_duplicate_number/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Find the Duplicate Number
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../happy_number/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Happy Number
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#sliding-window-collapse" aria-expanded="false">
+                    Sliding Window
+                </a>
+                <div class="collapse" id="sliding-window-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../longest_substring_without_repeating_characters/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Longest Substring Without Repeating Characters
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../longest_repeating_character_replacement/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Longest Repeating Character Replacement
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../minimum_window_substring/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Minimum Window Substring
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../permutation_in_string/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Permutation in String
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#stack-collapse" aria-expanded="false">
+                    Stack
+                </a>
+                <div class="collapse" id="stack-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../valid_parentheses/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Valid Parentheses
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#binary-search-collapse" aria-expanded="false">
+                    Binary Search
+                </a>
+                <div class="collapse" id="binary-search-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../find_minimum_in_rotated_sorted_array/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Find Minimum in Rotated Sorted Array
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../search_in_rotated_sorted_array/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Search in Rotated Sorted Array
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#linked-lists-collapse" aria-expanded="false">
+                    Linked Lists
+                </a>
+                <div class="collapse" id="linked-lists-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../merge_two_sorted_lists/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Merge Two Sorted Lists
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../reverse_linked_list/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Reverse Linked List
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../reorder_list/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Reorder List
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../remove_nth_node_from_end_of_list/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Remove Nth Node From End of List
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../merge_k_sorted_lists/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Merge K Sorted Lists
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../swap_nodes_in_pairs/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Swap Nodes in Pairs
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../add_two_numbers/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Add Two Numbers
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../remove_duplicates_from_sorted_list/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Remove Duplicates from Sorted List
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../remove_duplicates_from_sorted_list_ii/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Remove Duplicates from Sorted List II
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class=" active 
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#trees-collapse" aria-expanded="false">
+                    Trees
+                </a>
+                <div class="collapse" id="trees-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../invert_binary_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Invert Binary Tree
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../maximum_depth_of_binary_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Maximum Depth of Binary Tree
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../balanced_binary_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Balanced Binary Tree
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../same_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Same Tree
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../subtree_of_another_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Subtree of Another Tree
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../lowest_common_ancestor_of_a_binary_search_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Lowest Common Ancestor of a Binary Search Tree
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../binary_tree_level_order_traversal/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Binary Tree Level Order Traversal
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../validate_binary_search_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Validate Binary Search Tree
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="./"
+            class=" active 
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Kth Smallest Element in a BST
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../construct_binary_tree_from_preorder_and_inorder_traversal/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Construct Binary Tree from Preorder and Inorder Traversal
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../binary_tree_right_side_view/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Binary Tree Right Side View
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../count_good_nodes_in_binary_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Count Good Nodes in Binary Tree
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../lowest_common_ancestor_of_a_binary_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Lowest Common Ancestor of a Binary Tree
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#tries-collapse" aria-expanded="false">
+                    Tries
+                </a>
+                <div class="collapse" id="tries-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../implement_trie_prefix_tree/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Implement Trie (Prefix Tree)
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../design_add_and_search_words_data_structure/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Design Add and Search Words Data Structure
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#dynamic-programming-collapse" aria-expanded="false">
+                    Dynamic Programming
+                </a>
+                <div class="collapse" id="dynamic-programming-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../climbing_stairs/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Climbing Stairs
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../coin_change/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Coin Change
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../longest_increasing_subsequence/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Longest Increasing Subsequence
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../longest_common_subsequence/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Longest Common Subsequence
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../word_break/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Word Break
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../house_robber/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            House Robber
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../house_robber_ii/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            House Robber II
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../decode_ways/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Decode Ways
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../unique_paths/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Unique Paths
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../jump_game/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Jump Game
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../longest_palindromic_substring/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Longest Palindromic Substring
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../palindromic_substrings/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Palindromic Substrings
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../maximum_subarray/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Maximum Subarray
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../maximum_product_subarray/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Maximum Product Subarray
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#graphs-collapse" aria-expanded="false">
+                    Graphs
+                </a>
+                <div class="collapse" id="graphs-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../clone_graph/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Clone Graph
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../course_schedule/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Course Schedule
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../pacific_atlantic_water_flow/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Pacific Atlantic Water Flow
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../number_of_islands/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Number of Islands
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#intervals-collapse" aria-expanded="false">
+                    Intervals
+                </a>
+                <div class="collapse" id="intervals-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../merge_intervals/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Merge Intervals
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../insert_interval/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Insert Interval
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../meeting_rooms/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Meeting Rooms
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../meeting_rooms_ii/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Meeting Rooms II
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../non_overlapping_intervals/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Non-overlapping Intervals
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#bit-manipulation-collapse" aria-expanded="false">
+                    Bit Manipulation
+                </a>
+                <div class="collapse" id="bit-manipulation-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../sum_of_two_integers/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Sum of Two Integers
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../number_of_1_bits/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Number of 1 Bits
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../counting_bits/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Counting Bits
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../missing_number/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Missing Number
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../reverse_bits/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Reverse Bits
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#backtracking-collapse" aria-expanded="false">
+                    Backtracking
+                </a>
+                <div class="collapse" id="backtracking-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../combination_sum/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Combination Sum
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+        <div class="container">
+            <div class="row row-preview">
+                <div class="col">
+                    <a href="../validate_binary_search_tree/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="../construct_binary_tree_from_preorder_and_inorder_traversal/"
+                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="64-kth-smallest-element-in-a-bst">64. Kth Smallest Element in a BST</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Given the <code>root</code> of a Binary Search Tree (BST) and an integer <code>k</code>, return <em>the <code>k</code>th smallest value (1-indexed) of all the values of the nodes in the tree</em>.</p>
+<p><strong>Example 1:</strong></p>
+<p><img alt="Kth Smallest Element in a BST Example 1" src="https://assets.leetcode.com/uploads/2021/02/19/kthtree.jpg" /></p>
+<p><strong>Input:</strong> root = [3,1,4,null,2], k = 1
+<strong>Output:</strong> 1</p>
+<p><strong>Example 2:</strong></p>
+<p><img alt="Kth Smallest Element in a BST Example 2" src="https://assets.leetcode.com/uploads/2021/02/19/kthtree2.jpg" /></p>
+<p><strong>Input:</strong> root = [5,3,6,2,4,null,null,1], k = 3
+<strong>Output:</strong> 3</p>
+<h2 id="solution">Solution</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Definition for a binary tree node.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">TreeNode</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">kthSmallest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="n">current</span> <span class="o">=</span> <span class="n">root</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="k">while</span> <span class="n">current</span> <span class="ow">or</span> <span class="n">stack</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>            <span class="c1"># Traverse to the leftmost node, pushing nodes onto the stack</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            <span class="k">while</span> <span class="n">current</span><span class="p">:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">left</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>            <span class="c1"># Pop the smallest node (leftmost node in the current subtree)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            <span class="n">current</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>            <span class="n">k</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>            <span class="c1"># If k becomes 0, this is our kth smallest element</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>                <span class="k">return</span> <span class="n">current</span><span class="o">.</span><span class="n">val</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            <span class="c1"># Move to the right subtree to find the next smallest element</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">right</span>
+</code></pre></div>
+<h2 id="explanation">Explanation</h2>
+<p>The property of a Binary Search Tree (BST) is that an in-order traversal of the tree yields the nodes in ascending order. Therefore, to find the <code>k</code>th smallest element, we can perform an in-order traversal and stop when we have visited <code>k</code> nodes.</p>
+<p><strong>Iterative In-order Traversal (using a stack):</strong></p>
+<ol>
+<li>
+<p><strong>Initialization:</strong></p>
+<ul>
+<li>Create an empty <code>stack</code>.</li>
+<li>Initialize <code>current</code> to <code>root</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Traverse Left:</strong> While <code>current</code> is not <code>None</code>:</p>
+<ul>
+<li>Push <code>current</code> onto the <code>stack</code>.</li>
+<li>Move <code>current</code> to <code>current.left</code>. This ensures we go as far left as possible, finding the smallest elements first.</li>
+</ul>
+</li>
+<li>
+<p><strong>Process Node:</strong> Once <code>current</code> is <code>None</code> (meaning we've reached the leftmost node of the current subtree):</p>
+<ul>
+<li>Pop a node from the <code>stack</code>. This is the next smallest element in the in-order traversal.</li>
+<li>Decrement <code>k</code>.</li>
+<li>If <code>k</code> becomes 0, we have found our <code>k</code>th smallest element. Return its <code>val</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Traverse Right:</strong> Move <code>current</code> to the <code>right</code> child of the popped node. This prepares for finding the next smallest elements in the right subtree.</p>
+</li>
+</ol>
+<p>This process continues until the <code>k</code>th smallest element is found.</p>
+<p><strong>Time and Space Complexity:</strong></p>
+<ul>
+<li><strong>Time Complexity:</strong> O(H + k), where H is the height of the BST. In the worst case (a skewed tree), H can be N (number of nodes), so O(N). In a balanced BST, H is log N, so O(log N + k). We visit at most <code>k</code> nodes and traverse down to the <code>k</code>th node.</li>
+<li><strong>Space Complexity:</strong> O(H) for the stack. In the worst case, O(N), and in a balanced tree, O(log N).</li>
+</ul></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '..';</script>
+        <script src="../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/mkdocs.js"></script>
+			<script src="../search/main.js" defer></script>
+
+</body>
+
+</html>
